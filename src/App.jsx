@@ -1,3 +1,13 @@
+import { RouterProvider } from "react-router-dom";
+import Routers from "./routers";
+
 export default function App() {
-  return <p className="text-3xl font-bold underline">Hello world!</p>;
+  return (
+    <RouterProvider
+      future={{
+        v7_startTransition: true,
+      }}
+      router={Routers}
+    />
+  );
 }
