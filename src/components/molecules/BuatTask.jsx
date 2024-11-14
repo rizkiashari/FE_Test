@@ -6,15 +6,16 @@ import Button from "../atoms/Button";
 import Modal from "./Modal";
 import { CiSearch } from "react-icons/ci";
 import { paginate } from "../../utils/paginate";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 import listBarang from "../../data/listBarang.json";
 
 const BuatTask = () => {
-  const [showingAddBarang, setShowingAddBarang] = useState(true);
-  const [itemsPerPage, setItemsPerPage] = useState(10); // State untuk jumlah item per halaman
+  const [showingAddBarang, setShowingAddBarang] = useState(false);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-  const [goToPage, setGoToPage] = useState(""); // State untuk input halaman tujuan
 
-  const paginatedData = paginate(listBarang, itemsPerPage); // Pecah data menjadi halaman
+  const paginatedData = paginate(listBarang, itemsPerPage);
 
   const totalPages = paginatedData.length;
 
@@ -22,17 +23,16 @@ const BuatTask = () => {
     setCurrentPage(pageNumber);
   };
 
-  const handleGoToPage = () => {
-    const page = parseInt(goToPage, 10);
+  const handleGoToPage = (value) => {
+    const page = parseInt(value, 10);
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      setGoToPage(""); // Bersihkan input setelah pindah halaman
     }
   };
 
   const handleItemsPerPageChange = (event) => {
-    setItemsPerPage(parseInt(event.target.value, 10)); // Ubah jumlah item per halaman
-    setCurrentPage(1); // Reset halaman ke 1 saat jumlah item per halaman diubah
+    setItemsPerPage(parseInt(event.target.value, 10));
+    setCurrentPage(1);
   };
 
   const renderPagination = () => {
@@ -40,13 +40,12 @@ const BuatTask = () => {
     const paginationItems = [];
 
     if (totalPages <= 5) {
-      // Tampilkan semua halaman jika jumlah halaman <= 5
       for (let i = 1; i <= totalPages; i++) {
         paginationItems.push(
           <button
             key={i}
             onClick={() => handlePageChange(i)}
-            className={`ml-3 border px-4 py-2 bg-white
+            className={`ml-3 border px-4 py-2 bg-white text-sm
               ${
                 currentPage === i
                   ? "border-[#1890FF] text-[#1890FF]"
@@ -58,20 +57,31 @@ const BuatTask = () => {
         );
       }
     } else {
-      // Pagination dengan format "1 ... 4 5 6 ... totalPages"
       paginationItems.push(
-        <button
-          key={1}
-          onClick={() => handlePageChange(1)}
-          className={`mr-3 border px-4 py-2 bg-white
+        <div className="flex items-center">
+          <button
+            onClick={() => {
+              if (currentPage > 1) {
+                handlePageChange(currentPage - 1);
+              }
+            }}
+            className={`mr-3 border px-4 py-3 bg-white text-sm`}
+          >
+            <IoIosArrowBack />
+          </button>
+          <button
+            key={1}
+            onClick={() => handlePageChange(1)}
+            className={`mr-3 border px-4 py-2 bg-white text-sm
             ${
               currentPage === 1
                 ? "border-[#1890FF] text-[#1890FF]"
                 : "border-[#D9D9D9] text-black"
             }`}
-        >
-          1
-        </button>
+          >
+            1
+          </button>
+        </div>
       );
 
       if (currentPage > maxPagesToShow) {
@@ -90,7 +100,7 @@ const BuatTask = () => {
           <button
             key={i}
             onClick={() => handlePageChange(i)}
-            className={`mx-3 border px-4 py-2 bg-white
+            className={`mx-3 border px-4 py-2 bg-white text-sm
               ${
                 currentPage === i
                   ? "border-[#1890FF] text-[#1890FF]"
@@ -107,18 +117,30 @@ const BuatTask = () => {
       }
 
       paginationItems.push(
-        <button
-          key={totalPages}
-          onClick={() => handlePageChange(totalPages)}
-          className={`ml-3 border px-4 py-2 bg-white
+        <>
+          <button
+            key={totalPages}
+            onClick={() => handlePageChange(totalPages)}
+            className={`mx-3 border px-4 py-2 bg-white text-sm
             ${
               currentPage === totalPages
                 ? "border-[#1890FF] text-[#1890FF]"
                 : "border-[#D9D9D9] text-black"
             }`}
-        >
-          {totalPages}
-        </button>
+          >
+            {totalPages}
+          </button>
+          <button
+            onClick={() => {
+              if (currentPage < totalPages) {
+                handlePageChange(currentPage + 1);
+              }
+            }}
+            className={`mr-3 border px-4 py-3 bg-white `}
+          >
+            <IoIosArrowForward />
+          </button>
+        </>
       );
     }
 
@@ -186,82 +208,93 @@ const BuatTask = () => {
       </div>
       {showingAddBarang && (
         <Modal>
-          <div className="flex">
-            <TextInput
-              name="kode_name_barang"
-              placeholder="Cari kode/nama barang"
-            />
-            <button className="bg-[#E5A000] text-white px-4">
-              <CiSearch />
-            </button>
-          </div>
-          <table className="w-full mt-4 border-collapse">
-            <thead className="bg-[#FAFAFA]">
-              <tr>
-                <th className="py-3 text-left px-2">
-                  <input type="checkbox" />
-                </th>
-                <th className="py-3 text-left px-2">Kode Barang</th>
-                <th className="py-3 text-left px-2">Nama Barang</th>
-                <th className="py-3 text-left px-2">Merk</th>
-                <th className="py-3 text-left px-2">Jenis Barang</th>
-                <th className="py-3 text-left px-2">Gudang</th>
-                <th className="py-3 text-left px-2">Total Stock (Pcs)</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paginatedData[currentPage - 1].map((item, index) => (
-                <tr
-                  key={index}
-                  className="py-3 text-left px-2 border-b border-gray-100"
-                >
-                  <td className="py-3 text-left px-2">
-                    <input type="checkbox" />
-                  </td>
-                  <td className="py-3 text-left px-2">{item.kode}</td>
-                  <td className="py-3 text-left px-2">{item.nama}</td>
-                  <td className="py-3 text-left px-2">{item.merk}</td>
-                  <td className="py-3 text-left px-2">{item.jenis}</td>
-                  <td className="py-3 text-left px-2">{item.gudang}</td>
-                  <td className="py-3 text-left px-2">{item.stock}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <>
+            <div className="border-t border-b border-[#D9D9D9] py-8">
+              <div className="flex">
+                <TextInput
+                  name="kode_name_barang"
+                  placeholder="Cari kode/nama barang"
+                />
+                <button className="bg-[#E5A000] text-white px-4">
+                  <CiSearch />
+                </button>
+              </div>
+              <table className="w-full mt-4 border-collapse">
+                <thead className="bg-[#FAFAFA]">
+                  <tr>
+                    <th className="py-3 text-left px-2">
+                      <input type="checkbox" />
+                    </th>
+                    <th className="py-3 text-left px-2">Kode Barang</th>
+                    <th className="py-3 text-left px-2">Nama Barang</th>
+                    <th className="py-3 text-left px-2">Merk</th>
+                    <th className="py-3 text-left px-2">Jenis Barang</th>
+                    <th className="py-3 text-left px-2">Gudang</th>
+                    <th className="py-3 text-left px-2">Total Stock (Pcs)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {paginatedData[currentPage - 1].map((item, index) => (
+                    <tr
+                      key={index}
+                      className="py-3 text-left px-2 border-b border-gray-100"
+                    >
+                      <td className="py-3 text-left px-2">
+                        <input type="checkbox" />
+                      </td>
+                      <td className="py-3 text-left px-2">{item.kode}</td>
+                      <td className="py-3 text-left px-2">{item.nama}</td>
+                      <td className="py-3 text-left px-2">{item.merk}</td>
+                      <td className="py-3 text-left px-2">{item.jenis}</td>
+                      <td className="py-3 text-left px-2">{item.gudang}</td>
+                      <td className="py-3 text-left px-2">{item.stock}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
 
-          <div>
-            <div>{renderPagination()}</div>
-            <div>
-              <label>
-                Items per page:
+              <div className="flex items-center gap-3 justify-end">
+                <div className="flex items-center mt-4">
+                  {renderPagination()}
+                </div>
                 <select
+                  className="mt-4 border border-[#D9D9D9] p-2"
                   value={itemsPerPage}
                   onChange={handleItemsPerPageChange}
-                  style={{ marginLeft: "10px", padding: "5px" }}
                 >
-                  <option value={5}>5</option>
-                  <option value={10}>10</option>
-                  <option value={20}>20</option>
+                  <option value={5}>5/page</option>
+                  <option value={10}>10/page</option>
+                  <option value={20}>20/page</option>
+                  <option value={50}>50/page</option>
                 </select>
-              </label>
+                <div className="flex items-center mt-4 gap-2">
+                  <span>Go to</span>
+                  <input
+                    type="number"
+                    min="1"
+                    max={totalPages}
+                    onChange={(e) => {
+                      handleGoToPage(e.target.value);
+                    }}
+                    className="border border-[#D9D9D9] px-2 py-1 w-10"
+                  />
+                </div>
+              </div>
             </div>
-            <div>
-              <input
-                type="number"
-                min="1"
-                max={totalPages}
-                value={goToPage}
-                onChange={(e) => setGoToPage(e.target.value)}
-                style={{ padding: "5px", width: "50px", marginRight: "10px" }}
-                placeholder="Go"
-              />
-              <button
-                onClick={handleGoToPage}
-                style={{ padding: "5px", cursor: "pointer" }}
-              >
-                Go
-              </button>
-            </div>
+          </>
+          <div className="flex justify-end items-center mt-8 gap-4">
+            <Button
+              text="Batal"
+              className="w-[8rem] border border-[#D9D9D9] hover:bg-[#fefefc] drop-shadow-sm text-black font-normal"
+              colorBg="#FFFFFF"
+            />
+            <Button
+              text="Tambah ke Daftar Pemindahan"
+              colorBg="#F5F5F5"
+              className={
+                "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
+              }
+            />
           </div>
         </Modal>
       )}
