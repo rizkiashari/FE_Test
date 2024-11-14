@@ -4,7 +4,7 @@ import Paragraf from "../atoms/Paragraf";
 const TextInput = ({ text, name, placeholder, ...props }) => {
   return (
     <div className="flex flex-col gap-2">
-      <Paragraf text={text} size="14px" />
+      <Paragraf text={text} color="text-[#000]" size="14px" />
       <Input name={name} placeholder={placeholder} {...props} />
     </div>
   );
