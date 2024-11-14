@@ -3,7 +3,7 @@ import Paragraf from "../atoms/Paragraf";
 
 const Header = () => {
   return (
-    <div className="container mx-auto py-4 flex justify-between items-center">
+    <div className="container mx-auto py-4 flex justify-between items-center bg-white">
       <Paragraf
         size="18px"
         color="text-[#262626]"
