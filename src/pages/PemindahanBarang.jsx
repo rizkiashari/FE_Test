@@ -6,7 +6,7 @@ const PemindahanBarang = () => {
   return (
     <div>
       <div className="border shadow-md bg-white">
-        <Header />
+        <Header text="Warehouse Management System" />
       </div>
       <Breadcumb />
       <BuatTask />

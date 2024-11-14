@@ -2,7 +2,7 @@ import Paragraf from "../atoms/Paragraf";
 
 const Breadcumb = () => {
   return (
-    <div className="px-6 bg-white py-2">
+    <div className="px-6 bg-white py-4">
       <div className="flex items-center gap-4 text-[#00000073]">
         <Paragraf size="14px" color="text-[#00000073]" text="Stock Movement" />
         /

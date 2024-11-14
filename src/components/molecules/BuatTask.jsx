@@ -1,1489 +1,21 @@
 import { useState } from "react";
 import Paragraf from "../atoms/Paragraf";
 import TextInput from "./TextInput";
+import Select from "./Select";
+import Button from "../atoms/Button";
+import Modal from "./Modal";
+import { CiSearch } from "react-icons/ci";
+import { paginate } from "../../utils/paginate";
+import listBarang from "../../data/listBarang.json";
 
 const BuatTask = () => {
-  return (
-    <div className="mx-6 my-7 bg-white">
-      <div className="px-6 border shadow-md py-4">
-        <Paragraf size="16px" color="text-[#000]" text="Buat Task Baru" />
-      </div>
-      <div className="px-6">
-        <div>
-          <TextInput
-            name="task_no"
-            text="Task No"
-            placeholder="Task No"
-            value="SM-PB-001/24/2024"
-          />
-        </div>
-        <TableComponent />
-      </div>
-    </div>
-  );
-};
-
-// Data dummy untuk pagination
-const allData = [
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-  {
-    kode: "GMI-555-BALL",
-    nama: "GMI-555-BALL",
-    merk: "555",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 100,
-  },
-  {
-    kode: "GMI-212-UNIT",
-    nama: "GMI-212-UNIT",
-    merk: "212UNIT",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-123-BALL",
-    nama: "GMI-123-BALL",
-    merk: "123-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-124-BALL",
-    nama: "GMI-124-BALL",
-    merk: "124-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 110,
-  },
-  {
-    kode: "GMI-125-BALL",
-    nama: "GMI-125-BALL",
-    merk: "125-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 115,
-  },
-  {
-    kode: "GMI-126-BALL",
-    nama: "GMI-126-BALL",
-    merk: "126-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-127-BALL",
-    nama: "GMI-127-BALL",
-    merk: "127-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 118,
-  },
-  {
-    kode: "GMI-128-BALL",
-    nama: "GMI-128-BALL",
-    merk: "128-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 119,
-  },
-  {
-    kode: "GMI-129-BALL",
-    nama: "GMI-129-BALL",
-    merk: "129-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 120,
-  },
-  {
-    kode: "GMI-130-BALL",
-    nama: "GMI-130-BALL",
-    merk: "130-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 121,
-  },
-  {
-    kode: "GMI-131-BALL",
-    nama: "GMI-131-BALL",
-    merk: "131-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 122,
-  },
-  {
-    kode: "GMI-132-BALL",
-    nama: "GMI-132-BALL",
-    merk: "132-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 123,
-  },
-  {
-    kode: "GMI-133-BALL",
-    nama: "GMI-133-BALL",
-    merk: "133-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 124,
-  },
-  {
-    kode: "GMI-134-BALL",
-    nama: "GMI-134-BALL",
-    merk: "134-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 125,
-  },
-  {
-    kode: "GMI-135-BALL",
-    nama: "GMI-135-BALL",
-    merk: "135-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 126,
-  },
-  {
-    kode: "GMI-136-BALL",
-    nama: "GMI-136-BALL",
-    merk: "136-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 127,
-  },
-  {
-    kode: "GMI-137-BALL",
-    nama: "GMI-137-BALL",
-    merk: "137-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 128,
-  },
-  {
-    kode: "GMI-138-BALL",
-    nama: "GMI-138-BALL",
-    merk: "138-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 129,
-  },
-  {
-    kode: "GMI-139-BALL",
-    nama: "GMI-139-BALL",
-    merk: "139-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 130,
-  },
-  {
-    kode: "GMI-140-BALL",
-    nama: "GMI-140-BALL",
-    merk: "140-TIPE",
-    jenis: "Ball-Joint",
-    gudang: "Tamansari",
-    stock: 131,
-  },
-];
-
-// Fungsi untuk memecah data menjadi halaman
-const paginate = (data, itemsPerPage) => {
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const pages = [];
-  for (let i = 0; i < totalPages; i++) {
-    pages.push(data.slice(i * itemsPerPage, i * itemsPerPage + itemsPerPage));
-  }
-  return pages;
-};
-
-const TableComponent = () => {
+  const [showingAddBarang, setShowingAddBarang] = useState(true);
   const [itemsPerPage, setItemsPerPage] = useState(10); // State untuk jumlah item per halaman
   const [currentPage, setCurrentPage] = useState(1);
   const [goToPage, setGoToPage] = useState(""); // State untuk input halaman tujuan
 
-  const paginatedData = paginate(allData, itemsPerPage); // Pecah data menjadi halaman
-  const totalData = allData.length; // Total data
+  const paginatedData = paginate(listBarang, itemsPerPage); // Pecah data menjadi halaman
+
   const totalPages = paginatedData.length;
 
   const handlePageChange = (pageNumber) => {
@@ -1514,14 +46,12 @@ const TableComponent = () => {
           <button
             key={i}
             onClick={() => handlePageChange(i)}
-            style={{
-              padding: "5px",
-              marginRight: "5px",
-              backgroundColor: currentPage === i ? "#007BFF" : "#f0f0f0",
-              color: currentPage === i ? "#fff" : "#000",
-              border: "1px solid #ccc",
-              cursor: "pointer",
-            }}
+            className={`ml-3 border px-4 py-2 bg-white
+              ${
+                currentPage === i
+                  ? "border-[#1890FF] text-[#1890FF]"
+                  : "border-[#D9D9D9] text-black"
+              }`}
           >
             {i}
           </button>
@@ -1533,21 +63,23 @@ const TableComponent = () => {
         <button
           key={1}
           onClick={() => handlePageChange(1)}
-          style={{
-            padding: "5px",
-            marginRight: "5px",
-            backgroundColor: currentPage === 1 ? "#007BFF" : "#f0f0f0",
-            color: currentPage === 1 ? "#fff" : "#000",
-            border: "1px solid #ccc",
-            cursor: "pointer",
-          }}
+          className={`mr-3 border px-4 py-2 bg-white
+            ${
+              currentPage === 1
+                ? "border-[#1890FF] text-[#1890FF]"
+                : "border-[#D9D9D9] text-black"
+            }`}
         >
           1
         </button>
       );
 
       if (currentPage > maxPagesToShow) {
-        paginationItems.push(<span key="left-dots">...</span>);
+        paginationItems.push(
+          <span className="" key="left-dots">
+            ...
+          </span>
+        );
       }
 
       const startPage = Math.max(2, currentPage - 1);
@@ -1558,14 +90,12 @@ const TableComponent = () => {
           <button
             key={i}
             onClick={() => handlePageChange(i)}
-            style={{
-              padding: "5px",
-              marginRight: "5px",
-              backgroundColor: currentPage === i ? "#007BFF" : "#f0f0f0",
-              color: currentPage === i ? "#fff" : "#000",
-              border: "1px solid #ccc",
-              cursor: "pointer",
-            }}
+            className={`mx-3 border px-4 py-2 bg-white
+              ${
+                currentPage === i
+                  ? "border-[#1890FF] text-[#1890FF]"
+                  : "border-[#D9D9D9] text-black"
+              }`}
           >
             {i}
           </button>
@@ -1580,14 +110,12 @@ const TableComponent = () => {
         <button
           key={totalPages}
           onClick={() => handlePageChange(totalPages)}
-          style={{
-            padding: "5px",
-            marginRight: "5px",
-            backgroundColor: currentPage === totalPages ? "#007BFF" : "#f0f0f0",
-            color: currentPage === totalPages ? "#fff" : "#000",
-            border: "1px solid #ccc",
-            cursor: "pointer",
-          }}
+          className={`ml-3 border px-4 py-2 bg-white
+            ${
+              currentPage === totalPages
+                ? "border-[#1890FF] text-[#1890FF]"
+                : "border-[#D9D9D9] text-black"
+            }`}
         >
           {totalPages}
         </button>
@@ -1598,115 +126,147 @@ const TableComponent = () => {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Tambah Barang</h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Cari kode/ nama barang"
-          style={{ padding: "5px", marginRight: "10px" }}
-        />
-        <button
-          style={{
-            padding: "5px 10px",
-            backgroundColor: "#FFC107",
-            border: "none",
-            cursor: "pointer",
-          }}
-        >
-          Cari
-        </button>
-      </div>
-      <table
-        style={{ width: "100%", marginTop: "20px", borderCollapse: "collapse" }}
-      >
-        <thead>
-          <tr>
-            <th style={styles.th}>
-              <input type="checkbox" />
-            </th>
-            <th style={styles.th}>Kode Barang</th>
-            <th style={styles.th}>Nama Barang</th>
-            <th style={styles.th}>Merk</th>
-            <th style={styles.th}>Jenis Barang</th>
-            <th style={styles.th}>Gudang</th>
-            <th style={styles.th}>Total Stock (Pcs)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {paginatedData[currentPage - 1].map((item, index) => (
-            <tr key={index} style={styles.tr}>
-              <td style={styles.td}>
-                <input type="checkbox" />
-              </td>
-              <td style={styles.td}>{item.kode}</td>
-              <td style={styles.td}>{item.nama}</td>
-              <td style={styles.td}>{item.merk}</td>
-              <td style={styles.td}>{item.jenis}</td>
-              <td style={styles.td}>{item.gudang}</td>
-              <td style={styles.td}>{item.stock}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div>{renderPagination()}</div>
-        <div>
-          <label>
-            Items per page:
-            <select
-              value={itemsPerPage}
-              onChange={handleItemsPerPageChange}
-              style={{ marginLeft: "10px", padding: "5px" }}
-            >
-              <option value={5}>5</option>
-              <option value={10}>10</option>
-              <option value={20}>20</option>
-            </select>
-          </label>
+    <>
+      <div className="mx-6 my-7 bg-white">
+        <div className="px-6 border shadow-md py-4">
+          <Paragraf size="16px" color="text-[#000]" text="Buat Task Baru" />
         </div>
-        <div>
-          <input
-            type="number"
-            min="1"
-            max={totalPages}
-            value={goToPage}
-            onChange={(e) => setGoToPage(e.target.value)}
-            style={{ padding: "5px", width: "50px", marginRight: "10px" }}
-            placeholder="Go"
-          />
-          <button
-            onClick={handleGoToPage}
-            style={{ padding: "5px", cursor: "pointer" }}
-          >
-            Go
-          </button>
+        <div className="px-6 pt-8 pb-10">
+          <div className="flex gap-8 item-center w-1/2">
+            <TextInput
+              name="task_no"
+              text="Task No"
+              placeholder="Task No"
+              value="SM-PB-001/24/2024"
+              disabled={true}
+            />
+            <Select
+              text="Ditugaskan ke"
+              options={[
+                { value: "", label: "Pilih Karyawan" },
+                { value: "1", label: "Karyawan 1" },
+                { value: "2", label: "Karyawan 2" },
+                { value: "3", label: "Karyawan 3" },
+              ]}
+            />
+          </div>
+          <div className="mt-16 mb-2 bg-[#FAFAFA] gap-2.5 border border-[#D9D9D9] py-8 flex flex-col justify-center items-center">
+            <Paragraf
+              size="14px"
+              className="font-semibold"
+              color="text-[#000]"
+              text="Belum ada barang"
+            />
+            <Paragraf
+              size="14px"
+              className="font-normal"
+              color="text-[#9CA3AF]"
+              text="Silahkan tambah barang terlebih dahulu untuk mulai memindahkan"
+            />
+            <Button
+              text="Tambah Barang"
+              onClick={() => setShowingAddBarang(true)}
+            />
+          </div>
+          <div className="flex justify-end items-center mt-8 gap-4">
+            <Button
+              text="Batal"
+              className="w-[8rem] border border-[#D9D9D9] hover:bg-[#fefefc] drop-shadow-sm text-black font-normal"
+              colorBg="#FFFFFF"
+            />
+            <Button
+              text="Generate Task"
+              colorBg="#F5F5F5"
+              className={
+                "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
+              }
+            />
+          </div>
         </div>
       </div>
-    </div>
+      {showingAddBarang && (
+        <Modal>
+          <div className="flex">
+            <TextInput
+              name="kode_name_barang"
+              placeholder="Cari kode/nama barang"
+            />
+            <button className="bg-[#E5A000] text-white px-4">
+              <CiSearch />
+            </button>
+          </div>
+          <table className="w-full mt-4 border-collapse">
+            <thead className="bg-[#FAFAFA]">
+              <tr>
+                <th className="py-3 text-left px-2">
+                  <input type="checkbox" />
+                </th>
+                <th className="py-3 text-left px-2">Kode Barang</th>
+                <th className="py-3 text-left px-2">Nama Barang</th>
+                <th className="py-3 text-left px-2">Merk</th>
+                <th className="py-3 text-left px-2">Jenis Barang</th>
+                <th className="py-3 text-left px-2">Gudang</th>
+                <th className="py-3 text-left px-2">Total Stock (Pcs)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {paginatedData[currentPage - 1].map((item, index) => (
+                <tr
+                  key={index}
+                  className="py-3 text-left px-2 border-b border-gray-100"
+                >
+                  <td className="py-3 text-left px-2">
+                    <input type="checkbox" />
+                  </td>
+                  <td className="py-3 text-left px-2">{item.kode}</td>
+                  <td className="py-3 text-left px-2">{item.nama}</td>
+                  <td className="py-3 text-left px-2">{item.merk}</td>
+                  <td className="py-3 text-left px-2">{item.jenis}</td>
+                  <td className="py-3 text-left px-2">{item.gudang}</td>
+                  <td className="py-3 text-left px-2">{item.stock}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div>
+            <div>{renderPagination()}</div>
+            <div>
+              <label>
+                Items per page:
+                <select
+                  value={itemsPerPage}
+                  onChange={handleItemsPerPageChange}
+                  style={{ marginLeft: "10px", padding: "5px" }}
+                >
+                  <option value={5}>5</option>
+                  <option value={10}>10</option>
+                  <option value={20}>20</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <input
+                type="number"
+                min="1"
+                max={totalPages}
+                value={goToPage}
+                onChange={(e) => setGoToPage(e.target.value)}
+                style={{ padding: "5px", width: "50px", marginRight: "10px" }}
+                placeholder="Go"
+              />
+              <button
+                onClick={handleGoToPage}
+                style={{ padding: "5px", cursor: "pointer" }}
+              >
+                Go
+              </button>
+            </div>
+          </div>
+        </Modal>
+      )}
+    </>
   );
 };
 
-const styles = {
-  th: {
-    padding: "10px",
-    border: "1px solid #ddd",
-    textAlign: "left",
-    backgroundColor: "#f8f8f8",
-  },
-  tr: {
-    borderBottom: "1px solid #ddd",
-  },
-  td: {
-    padding: "10px",
-    border: "1px solid #ddd",
-  },
-};
 export default BuatTask;
