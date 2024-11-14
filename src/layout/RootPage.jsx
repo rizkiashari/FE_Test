@@ -10,7 +10,7 @@ const RootPage = () => {
   }, []);
 
   return (
-    <div className="font-roboto">
+    <div className="font-roboto bg-[#F0F2F5] min-h-screen">
       <Outlet />
     </div>
   );
