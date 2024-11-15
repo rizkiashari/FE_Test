@@ -9,6 +9,8 @@ import { paginate } from "../../utils/paginate";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import listBarang from "../../data/listBarang.json";
+import dataPemindahan from "../../data/listPemindahan.json";
+import TableCus from "./TableCus";
 
 const BuatTask = () => {
   const [showingAddBarang, setShowingAddBarang] = useState(false);
@@ -172,24 +174,30 @@ const BuatTask = () => {
               ]}
             />
           </div>
-          <div className="mt-16 mb-2 bg-[#FAFAFA] gap-2.5 border border-[#D9D9D9] py-8 flex flex-col justify-center items-center">
-            <Paragraf
-              size="14px"
-              className="font-semibold"
-              color="text-[#000]"
-              text="Belum ada barang"
-            />
-            <Paragraf
-              size="14px"
-              className="font-normal"
-              color="text-[#9CA3AF]"
-              text="Silahkan tambah barang terlebih dahulu untuk mulai memindahkan"
-            />
-            <Button
-              text="Tambah Barang"
-              onClick={() => setShowingAddBarang(true)}
-            />
-          </div>
+          {dataPemindahan.length > 0 ? (
+            <TableCus />
+          ) : (
+            <div className="mt-16 mb-2 bg-[#FAFAFA] gap-2.5 border border-[#D9D9D9] py-8 flex flex-col justify-center items-center">
+              <Paragraf
+                size="14px"
+                className="font-semibold"
+                color="text-[#000]"
+                text="Belum ada barang"
+              />
+              <Paragraf
+                size="14px"
+                className="font-normal"
+                color="text-[#9CA3AF]"
+                text="Silahkan tambah barang terlebih dahulu untuk mulai memindahkan"
+              />
+              <Button
+                text="Tambah Barang"
+                onClick={() => setShowingAddBarang(true)}
+                colorBg="#E5A000"
+                className="text-white hover:bg-[#e5a000c7]"
+              />
+            </div>
+          )}
           <div className="flex justify-end items-center mt-8 gap-4">
             <Button
               text="Batal"
@@ -207,7 +215,10 @@ const BuatTask = () => {
         </div>
       </div>
       {showingAddBarang && (
-        <Modal>
+        <Modal
+          text="Tambah Barang"
+          onClickClose={() => setShowingAddBarang(false)}
+        >
           <>
             <div className="border-t border-b border-[#D9D9D9] py-8">
               <div className="flex">

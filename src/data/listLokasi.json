@@ -1,0 +1,26 @@
+[
+  {
+    "kode": "XCNZM",
+    "nama": "Lokasi 1",
+    "gedung": "GM-3456-3445",
+    "jenis": "XCMXMC-wDFX",
+    "volume": "700PC",
+    "deskripsi": "Lokasi aja"
+  },
+  {
+    "kode": "XCCV",
+    "nama": "Lokasi 2",
+    "gedung": "GM-3456-3446",
+    "jenis": "XCMXMC-wDFX",
+    "volume": "710PC",
+    "deskripsi": "Lokasi aja"
+  },
+  {
+    "kode": "XCNXN",
+    "nama": "Lokasi 3",
+    "gedung": "GM-3456-3447",
+    "jenis": "XCMXMC-wDFX",
+    "volume": "720PC",
+    "deskripsi": "Lokasi utama"
+  }
+]

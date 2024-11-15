@@ -1,1442 +1,242 @@
 [
   {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
+    "kode": "GMI-345-BALL",
+    "nama": "GMI-515-BALL",
     "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
     "stock": 100
   },
   {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
+    "kode": "GMI-346-BALL",
+    "nama": "GMI-516-BALL",
+    "merk": "555",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
+    "gudang": "Cibitung",
     "stock": 120
   },
   {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
+    "kode": "GMI-347-BALL",
+    "nama": "GMI-517-BALL",
+    "merk": "666",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
+    "gudang": "Cikarang",
+    "stock": 85
   },
   {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
+    "kode": "GMI-348-BALL",
+    "nama": "GMI-518-BALL",
+    "merk": "777",
+    "jenis": "Ball-Joint",
+    "gudang": "Bekasi",
+    "stock": 95
+  },
+  {
+    "kode": "GMI-349-BALL",
+    "nama": "GMI-519-BALL",
+    "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
     "stock": 110
   },
   {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
+    "kode": "GMI-350-BALL",
+    "nama": "GMI-520-BALL",
+    "merk": "666",
+    "jenis": "Ball-Joint",
+    "gudang": "Cibitung",
+    "stock": 75
+  },
+  {
+    "kode": "GMI-351-BALL",
+    "nama": "GMI-521-BALL",
+    "merk": "777",
+    "jenis": "Ball-Joint",
+    "gudang": "Cikarang",
+    "stock": 60
+  },
+  {
+    "kode": "GMI-352-BALL",
+    "nama": "GMI-522-BALL",
+    "merk": "888",
+    "jenis": "Ball-Joint",
+    "gudang": "Bekasi",
+    "stock": 105
+  },
+  {
+    "kode": "GMI-353-BALL",
+    "nama": "GMI-523-BALL",
+    "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
+    "stock": 130
+  },
+  {
+    "kode": "GMI-354-BALL",
+    "nama": "GMI-524-BALL",
+    "merk": "666",
+    "jenis": "Ball-Joint",
+    "gudang": "Cibitung",
+    "stock": 90
+  },
+  {
+    "kode": "GMI-355-BALL",
+    "nama": "GMI-525-BALL",
+    "merk": "777",
+    "jenis": "Ball-Joint",
+    "gudang": "Cikarang",
+    "stock": 80
+  },
+  {
+    "kode": "GMI-356-BALL",
+    "nama": "GMI-526-BALL",
+    "merk": "888",
+    "jenis": "Ball-Joint",
+    "gudang": "Bekasi",
     "stock": 115
   },
   {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
+    "kode": "GMI-357-BALL",
+    "nama": "GMI-527-BALL",
     "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
     "stock": 100
   },
   {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
+    "kode": "GMI-358-BALL",
+    "nama": "GMI-528-BALL",
+    "merk": "666",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
-  },
-  {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
+    "gudang": "Cibitung",
     "stock": 125
   },
   {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
+    "kode": "GMI-359-BALL",
+    "nama": "GMI-529-BALL",
+    "merk": "777",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
+    "gudang": "Cikarang",
+    "stock": 70
   },
   {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
+    "kode": "GMI-360-BALL",
+    "nama": "GMI-530-BALL",
+    "merk": "888",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
+    "gudang": "Bekasi",
+    "stock": 95
   },
   {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
+    "kode": "GMI-361-BALL",
+    "nama": "GMI-531-BALL",
+    "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
-    "stock": 128
+    "stock": 140
   },
   {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
+    "kode": "GMI-362-BALL",
+    "nama": "GMI-532-BALL",
+    "merk": "666",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
+    "gudang": "Cibitung",
+    "stock": 65
   },
   {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
+    "kode": "GMI-363-BALL",
+    "nama": "GMI-533-BALL",
+    "merk": "777",
+    "jenis": "Ball-Joint",
+    "gudang": "Cikarang",
+    "stock": 85
+  },
+  {
+    "kode": "GMI-364-BALL",
+    "nama": "GMI-534-BALL",
+    "merk": "888",
+    "jenis": "Ball-Joint",
+    "gudang": "Bekasi",
+    "stock": 110
+  },
+  {
+    "kode": "GMI-365-BALL",
+    "nama": "GMI-535-BALL",
+    "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
+    "stock": 120
+  },
+  {
+    "kode": "GMI-366-BALL",
+    "nama": "GMI-536-BALL",
+    "merk": "666",
+    "jenis": "Ball-Joint",
+    "gudang": "Cibitung",
+    "stock": 75
+  },
+  {
+    "kode": "GMI-367-BALL",
+    "nama": "GMI-537-BALL",
+    "merk": "777",
+    "jenis": "Ball-Joint",
+    "gudang": "Cikarang",
+    "stock": 60
+  },
+  {
+    "kode": "GMI-368-BALL",
+    "nama": "GMI-538-BALL",
+    "merk": "888",
+    "jenis": "Ball-Joint",
+    "gudang": "Bekasi",
     "stock": 130
   },
   {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
+    "kode": "GMI-369-BALL",
+    "nama": "GMI-539-BALL",
     "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
     "stock": 100
   },
   {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
+    "kode": "GMI-370-BALL",
+    "nama": "GMI-540-BALL",
+    "merk": "666",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
+    "gudang": "Cibitung",
+    "stock": 85
   },
   {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
+    "kode": "GMI-371-BALL",
+    "nama": "GMI-541-BALL",
+    "merk": "777",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
+    "gudang": "Cikarang",
+    "stock": 75
   },
   {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
+    "kode": "GMI-372-BALL",
+    "nama": "GMI-542-BALL",
+    "merk": "888",
     "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
+    "gudang": "Bekasi",
+    "stock": 90
   },
   {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
+    "kode": "GMI-373-BALL",
+    "nama": "GMI-543-BALL",
     "merk": "555",
     "jenis": "Ball-Joint",
     "gudang": "Tamansari",
-    "stock": 100
-  },
-  {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
     "stock": 110
   },
   {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
-    "merk": "555",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 100
-  },
-  {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
-  },
-  {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
-    "merk": "555",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 100
-  },
-  {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
-  },
-  {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
-    "merk": "555",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 100
-  },
-  {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
-  },
-  {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
-    "merk": "555",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 100
-  },
-  {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
-  },
-  {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
-  },
-  {
-    "kode": "GMI-555-BALL",
-    "nama": "GMI-555-BALL",
-    "merk": "555",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 100
-  },
-  {
-    "kode": "GMI-212-UNIT",
-    "nama": "GMI-212-UNIT",
-    "merk": "212UNIT",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-123-BALL",
-    "nama": "GMI-123-BALL",
-    "merk": "123-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-124-BALL",
-    "nama": "GMI-124-BALL",
-    "merk": "124-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 110
-  },
-  {
-    "kode": "GMI-125-BALL",
-    "nama": "GMI-125-BALL",
-    "merk": "125-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 115
-  },
-  {
-    "kode": "GMI-126-BALL",
-    "nama": "GMI-126-BALL",
-    "merk": "126-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-127-BALL",
-    "nama": "GMI-127-BALL",
-    "merk": "127-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 118
-  },
-  {
-    "kode": "GMI-128-BALL",
-    "nama": "GMI-128-BALL",
-    "merk": "128-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 119
-  },
-  {
-    "kode": "GMI-129-BALL",
-    "nama": "GMI-129-BALL",
-    "merk": "129-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 120
-  },
-  {
-    "kode": "GMI-130-BALL",
-    "nama": "GMI-130-BALL",
-    "merk": "130-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 121
-  },
-  {
-    "kode": "GMI-131-BALL",
-    "nama": "GMI-131-BALL",
-    "merk": "131-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 122
-  },
-  {
-    "kode": "GMI-132-BALL",
-    "nama": "GMI-132-BALL",
-    "merk": "132-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 123
-  },
-  {
-    "kode": "GMI-133-BALL",
-    "nama": "GMI-133-BALL",
-    "merk": "133-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 124
-  },
-  {
-    "kode": "GMI-134-BALL",
-    "nama": "GMI-134-BALL",
-    "merk": "134-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 125
-  },
-  {
-    "kode": "GMI-135-BALL",
-    "nama": "GMI-135-BALL",
-    "merk": "135-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 126
-  },
-  {
-    "kode": "GMI-136-BALL",
-    "nama": "GMI-136-BALL",
-    "merk": "136-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 127
-  },
-  {
-    "kode": "GMI-137-BALL",
-    "nama": "GMI-137-BALL",
-    "merk": "137-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 128
-  },
-  {
-    "kode": "GMI-138-BALL",
-    "nama": "GMI-138-BALL",
-    "merk": "138-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 129
-  },
-  {
-    "kode": "GMI-139-BALL",
-    "nama": "GMI-139-BALL",
-    "merk": "139-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 130
-  },
-  {
-    "kode": "GMI-140-BALL",
-    "nama": "GMI-140-BALL",
-    "merk": "140-TIPE",
-    "jenis": "Ball-Joint",
-    "gudang": "Tamansari",
-    "stock": 131
+    "kode": "GMI-374-BALL",
+    "nama": "GMI-544-BALL",
+    "merk": "666",
+    "jenis": "Ball-Joint",
+    "gudang": "Cibitung",
+    "stock": 105
   }
 ]

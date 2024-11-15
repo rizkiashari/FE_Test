@@ -1,7 +1,7 @@
-const Button = ({ text, className, colorBg = "#E5A000", ...props }) => {
+const Button = ({ text, className, colorBg, ...props }) => {
   return (
     <button
-      className={`bg-[${colorBg}] border border-[${colorBg}] text-white px-4 py-2 rounded-sm hover:bg-yellow-500 ${
+      className={`bg-[${colorBg}] border border-[${colorBg}] px-4 py-2 rounded-sm ${
         className || ""
       }`}
       {...props}
