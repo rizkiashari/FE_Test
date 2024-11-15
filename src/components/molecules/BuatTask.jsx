@@ -17,7 +17,9 @@ const BuatTask = () => {
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const paginatedData = paginate(listBarang, itemsPerPage);
+  const [paginatedData, setPaginatedData] = useState(
+    paginate(listBarang, itemsPerPage)
+  );
 
   const totalPages = paginatedData.length;
 
@@ -225,6 +227,18 @@ const BuatTask = () => {
                 <TextInput
                   name="kode_name_barang"
                   placeholder="Cari kode/nama barang"
+                  onChange={(e) => {
+                    // search all barang
+                    const val = e.target.value;
+                    const filteredData = listBarang.filter((item) => {
+                      return (
+                        item.kode.toLowerCase().includes(val.toLowerCase()) ||
+                        item.nama.toLowerCase().includes(val.toLowerCase())
+                      );
+                    });
+                    setPaginatedData(paginate(filteredData, itemsPerPage));
+                    setCurrentPage(1);
+                  }}
                 />
                 <button className="bg-[#E5A000] text-white px-4">
                   <CiSearch />
@@ -245,22 +259,30 @@ const BuatTask = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {paginatedData[currentPage - 1].map((item, index) => (
-                    <tr
-                      key={index}
-                      className="py-3 text-left px-2 border-b border-gray-100"
-                    >
-                      <td className="py-3 text-left px-2">
-                        <input type="checkbox" />
+                  {paginatedData.length > 0 ? (
+                    paginatedData[currentPage - 1].map((item, index) => (
+                      <tr
+                        key={index}
+                        className="py-3 text-left px-2 border-b border-gray-100"
+                      >
+                        <td className="py-3 text-left px-2">
+                          <input type="checkbox" />
+                        </td>
+                        <td className="py-3 text-left px-2">{item.kode}</td>
+                        <td className="py-3 text-left px-2">{item.nama}</td>
+                        <td className="py-3 text-left px-2">{item.merk}</td>
+                        <td className="py-3 text-left px-2">{item.jenis}</td>
+                        <td className="py-3 text-left px-2">{item.gudang}</td>
+                        <td className="py-3 text-left px-2">{item.stock}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr>
+                      <td colSpan="7" className="text-center">
+                        Data tidak ditemukan
                       </td>
-                      <td className="py-3 text-left px-2">{item.kode}</td>
-                      <td className="py-3 text-left px-2">{item.nama}</td>
-                      <td className="py-3 text-left px-2">{item.merk}</td>
-                      <td className="py-3 text-left px-2">{item.jenis}</td>
-                      <td className="py-3 text-left px-2">{item.gudang}</td>
-                      <td className="py-3 text-left px-2">{item.stock}</td>
                     </tr>
-                  ))}
+                  )}
                 </tbody>
               </table>
 
