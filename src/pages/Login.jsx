@@ -15,7 +15,6 @@ const Login = () => {
   const onLogin = (e) => {
     e.preventDefault();
 
-    console.log(data);
     if (!data.username || !data.password) {
       return Swal.fire({
         icon: "error",

@@ -21,6 +21,8 @@ const BuatTask = () => {
     paginate(listBarang, itemsPerPage)
   );
 
+  const [tempDataPemindahan, setTempDataPemindahan] = useState([]);
+
   const totalPages = paginatedData.length;
 
   const handlePageChange = (pageNumber) => {
@@ -154,6 +156,43 @@ const BuatTask = () => {
     return paginationItems;
   };
 
+  const checkedAll = (e) => {
+    const checkboxes = document.querySelectorAll("input[type=checkbox]");
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = e.target.checked;
+    });
+
+    // if checked, add to tempDataPemindahan
+    if (e.target.checked) {
+      const data = listBarang.map((item) => {
+        return {
+          kode: item.kode,
+          nama: item.nama,
+          merk: item.merk,
+          jenis: item.jenis,
+          gudang: item.gudang,
+          stock: item.stock,
+        };
+      });
+      setTempDataPemindahan(data);
+    } else {
+      setTempDataPemindahan([]);
+    }
+  };
+
+  const checkedOne = (e) => {
+    const kode = e.target.id;
+    const isChecked = e.target.checked;
+
+    if (isChecked) {
+      const data = listBarang.find((item) => item.kode === kode);
+      setTempDataPemindahan([...tempDataPemindahan, data]);
+    } else {
+      const data = tempDataPemindahan.filter((item) => item.kode !== kode);
+      setTempDataPemindahan(data);
+    }
+  };
+
   return (
     <>
       <div className="mx-6 my-7 bg-white">
@@ -180,7 +219,20 @@ const BuatTask = () => {
             />
           </div>
           {dataPemindahan.length > 0 ? (
-            <TableCus />
+            <>
+              <div className="flex justify-end">
+                <Button
+                  text="Tambah Barang"
+                  onClick={() => {
+                    setShowingAddBarang(true);
+                    setTempDataPemindahan(dataPemindahan);
+                  }}
+                  colorBg="#E5A000"
+                  className="text-white hover:bg-[#e5a000c7]"
+                />
+              </div>
+              <TableCus />
+            </>
           ) : (
             <div className="mt-16 mb-2 bg-[#FAFAFA] gap-2.5 border border-[#D9D9D9] py-8 flex flex-col justify-center items-center">
               <Paragraf
@@ -197,7 +249,10 @@ const BuatTask = () => {
               />
               <Button
                 text="Tambah Barang"
-                onClick={() => setShowingAddBarang(true)}
+                onClick={() => {
+                  setShowingAddBarang(true);
+                  setTempDataPemindahan(dataPemindahan);
+                }}
                 colorBg="#E5A000"
                 className="text-white hover:bg-[#e5a000c7]"
               />
@@ -208,13 +263,22 @@ const BuatTask = () => {
               text="Batal"
               className="w-[8rem] border border-[#D9D9D9] hover:bg-[#fefefc] drop-shadow-sm text-black font-normal"
               colorBg="#FFFFFF"
+              onClick={() => {
+                dataPemindahan.splice(0, dataPemindahan.length);
+                window.location.reload();
+              }}
             />
             <Button
               text="Generate Task"
-              colorBg="#F5F5F5"
+              colorBg={dataPemindahan.length > 0 ? "#E5A000" : "#F5F5F5"}
               className={
-                "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
+                dataPemindahan.length > 0
+                  ? "text-white hover:bg-[#e5a000c7]"
+                  : "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
               }
+              onClick={() => {
+                console.log(dataPemindahan);
+              }}
             />
           </div>
         </div>
@@ -222,7 +286,10 @@ const BuatTask = () => {
       {showingAddBarang && (
         <Modal
           text="Tambah Barang"
-          onClickClose={() => setShowingAddBarang(false)}
+          onClickClose={() => {
+            setShowingAddBarang(false);
+            setTempDataPemindahan([]);
+          }}
         >
           <>
             <div className="border-t border-b border-[#D9D9D9] py-8">
@@ -251,7 +318,13 @@ const BuatTask = () => {
                 <thead className="bg-[#FAFAFA]">
                   <tr>
                     <th className="py-3 text-left px-2">
-                      <input type="checkbox" />
+                      <input
+                        type="checkbox"
+                        onChange={checkedAll}
+                        checked={
+                          tempDataPemindahan.length === listBarang.length
+                        }
+                      />
                     </th>
                     <th className="py-3 text-left px-2">Kode Barang</th>
                     <th className="py-3 text-left px-2">Nama Barang</th>
@@ -269,7 +342,14 @@ const BuatTask = () => {
                         className="py-3 text-left px-2 border-b border-gray-100"
                       >
                         <td className="py-3 text-left px-2">
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id={item.kode}
+                            onChange={checkedOne}
+                            checked={tempDataPemindahan.some(
+                              (data) => data.kode === item.kode
+                            )}
+                          />
                         </td>
                         <td className="py-3 text-left px-2">{item.kode}</td>
                         <td className="py-3 text-left px-2">{item.nama}</td>
@@ -312,7 +392,7 @@ const BuatTask = () => {
                     onChange={(e) => {
                       handleGoToPage(e.target.value);
                     }}
-                    className="border border-[#D9D9D9] px-2 py-1 w-10"
+                    className="border border-[#D9D9D9] px-2 py-1 w-14"
                   />
                 </div>
               </div>
@@ -323,13 +403,24 @@ const BuatTask = () => {
               text="Batal"
               className="w-[8rem] border border-[#D9D9D9] hover:bg-[#fefefc] drop-shadow-sm text-black font-normal"
               colorBg="#FFFFFF"
+              onClick={() => {
+                setShowingAddBarang(false);
+                setTempDataPemindahan([]);
+              }}
             />
             <Button
               text="Tambah ke Daftar Pemindahan"
-              colorBg="#F5F5F5"
+              colorBg={tempDataPemindahan.length > 0 ? "#E5A000" : "#F5F5F5"}
               className={
-                "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
+                tempDataPemindahan.length > 0
+                  ? "text-white hover:bg-[#e5a000c7]"
+                  : "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
               }
+              onClick={() => {
+                dataPemindahan.push(...tempDataPemindahan);
+                setShowingAddBarang(false);
+                setTempDataPemindahan([]);
+              }}
             />
           </div>
         </Modal>
