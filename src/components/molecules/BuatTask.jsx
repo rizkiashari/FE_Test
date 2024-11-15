@@ -35,7 +35,10 @@ const BuatTask = () => {
   };
 
   const handleItemsPerPageChange = (event) => {
-    setItemsPerPage(parseInt(event.target.value, 10));
+    const value = parseInt(event.target.value, 10);
+    setItemsPerPage(value);
+    setPaginatedData(paginate(listBarang, value));
+
     setCurrentPage(1);
   };
 
