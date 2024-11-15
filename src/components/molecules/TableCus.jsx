@@ -3,16 +3,17 @@ import { Fragment, useState } from "react";
 import listLokasi from "../../data/listLokasi.json";
 import Modal from "./Modal";
 import Button from "../atoms/Button";
-import dataPemindahans from "../../data/listPemindahan.json";
 import addDataLokasi from "../../data/listAddLokasi.json";
 import { FaTrash } from "react-icons/fa6";
+import { useDataPemindahan } from "../../context/dataPemindahan";
 
 const TableCus = () => {
   const [openRows, setOpenRows] = useState({});
   const [isShowLoc, setIsShowLoc] = useState(false);
   const [currentKode, setCurrentKode] = useState("");
 
-  const [dataPemindahan, setDataPemindahan] = useState(dataPemindahans);
+  const { dataPemindahan, tambahDataPemindahan, resetDataPemindahan } =
+    useDataPemindahan();
 
   const [tempAllLoc, setTempAllLoc] = useState([]);
 
@@ -59,6 +60,7 @@ const TableCus = () => {
   };
 
   const addLokasiToDataPemindahan = () => {
+    resetDataPemindahan();
     const newDataPemindahan = dataPemindahan.map((item) => {
       if (item.kode === currentKode) {
         const newLokasi =
@@ -78,12 +80,9 @@ const TableCus = () => {
       return item;
     });
 
-    setDataPemindahan(newDataPemindahan);
+    console.log("newDataPemindahan: ", newDataPemindahan);
 
-    // remove all dataPemindahans
-    dataPemindahans.splice(0, dataPemindahans.length);
-    // add new dataPemindahans
-    dataPemindahans.push(...newDataPemindahan);
+    tambahDataPemindahan(newDataPemindahan);
 
     setTempAllLoc([]);
     setIsShowLoc(false);
@@ -148,7 +147,7 @@ const TableCus = () => {
                             </tr>
                           </thead>
                           <tbody>
-                            {item.lokasis.map((lokasi, index) => (
+                            {item?.lokasis?.map((lokasi, index) => (
                               <tr key={index}>
                                 <td>{lokasi.gedung}</td>
                                 <td></td>

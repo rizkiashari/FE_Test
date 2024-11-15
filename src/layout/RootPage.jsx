@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { DataPemindahanProvider } from "../context/dataPemindahan";
 
 const RootPage = () => {
   const location = useLocation();
@@ -21,7 +22,9 @@ const RootPage = () => {
 
   return (
     <div className="font-roboto bg-[#F0F2F5] min-h-screen">
-      <Outlet />
+      <DataPemindahanProvider>
+        <Outlet />
+      </DataPemindahanProvider>
     </div>
   );
 };

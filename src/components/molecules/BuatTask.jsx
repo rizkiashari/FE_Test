@@ -9,13 +9,16 @@ import { paginate } from "../../utils/paginate";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 import listBarang from "../../data/listBarang.json";
-import dataPemindahan from "../../data/listPemindahan.json";
 import TableCus from "./TableCus";
+import { useDataPemindahan } from "../../context/dataPemindahan";
 
 const BuatTask = () => {
   const [showingAddBarang, setShowingAddBarang] = useState(false);
   const [itemsPerPage, setItemsPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+
+  const { tambahDataPemindahan, dataPemindahan, resetDataPemindahan } =
+    useDataPemindahan();
 
   const [paginatedData, setPaginatedData] = useState(
     paginate(listBarang, itemsPerPage)
@@ -264,7 +267,7 @@ const BuatTask = () => {
               className="w-[8rem] border border-[#D9D9D9] hover:bg-[#fefefc] drop-shadow-sm text-black font-normal"
               colorBg="#FFFFFF"
               onClick={() => {
-                dataPemindahan.splice(0, dataPemindahan.length);
+                resetDataPemindahan();
                 window.location.reload();
               }}
             />
@@ -417,7 +420,9 @@ const BuatTask = () => {
                   : "border border-[#D9D9D9] text-[#00000040] hover:bg-[#F5F5F5]"
               }
               onClick={() => {
-                dataPemindahan.push(...tempDataPemindahan);
+                resetDataPemindahan();
+                tambahDataPemindahan(tempDataPemindahan);
+
                 setShowingAddBarang(false);
                 setTempDataPemindahan([]);
               }}
