@@ -83,7 +83,10 @@ const TableCus = () => {
 
     setDataPemindahan(newDataPemindahan);
 
-    console.log("Data Pemindahan", dataPemindahan);
+    // remove all dataPemindahans
+    dataPemindahans.splice(0, dataPemindahans.length);
+    // add new dataPemindahans
+    dataPemindahans.push(...newDataPemindahan);
 
     setTempAllLoc([]);
     setIsShowLoc(false);
