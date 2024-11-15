@@ -78,9 +78,6 @@ const TableCus = () => {
       return item;
     });
 
-    // update data pemindahan
-    console.log(newDataPemindahan);
-
     setDataPemindahan(newDataPemindahan);
 
     // remove all dataPemindahans
